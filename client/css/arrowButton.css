@@ -5,13 +5,11 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 0px 2px;
     border-radius: var(--ButtonBorderRadius);
-    padding: 0;
     position: static;
-    width: 8em;
+    width: fit-content;
     height: 2.5em;
-
+    overflow: hidden;
 }
 
 .button-container{
@@ -21,24 +19,14 @@
     align-items: center;
     position: static;
     background: #000000;
-    width: 8em;
+    width: fit-content;
     height: 100%;
+    padding: 0 10px;
     -webkit-appearance: none;
-    padding: 0;
     border: none;
     outline: none;
     color: white;
-
-
-}
-
-.button-container{
-    -webkit-appearance: none;
-    padding: 0;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    color: white;
+    transition: 0.4s;
 }
 
 .arrow-right{
