@@ -1,3 +1,5 @@
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
 .App {
     text-align: center;
     background-color: black;
@@ -27,6 +29,10 @@
 
 .App-link {
     color: #61dafb;
+}
+
+:root {
+    --ButtonBorderRadius: 0.5em;
 }
 
 @keyframes App-logo-spin {
