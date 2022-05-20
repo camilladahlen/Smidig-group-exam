@@ -1,0 +1,43 @@
+.subscription-options-container {
+    height: 2.5em;
+    background: rgba(243, 242, 242, 0.81);
+    border-radius: 10px;
+    width: fit-content;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscription-options-container label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: inherit;
+    width: inherit;
+    cursor: pointer;
+    border-right: 1px solid black;
+    z-index: 90;
+}
+.subscription-options-container label:last-child {
+    border-right: none;
+}
+
+.subscription-options-container input{
+    display: none;
+    width: inherit;
+    opacity: 0.01;
+    z-index: 100;
+}
+
+.subscription-options-container input[type="radio"]:checked+label,
+.Checked+label {
+    background: #000000;
+    color: #ffffff;
+}
+
+.subscription-options-container label:hover {
+    background: rgb(243, 242, 242);
+}
