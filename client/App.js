@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { BubblePage } from "./pages/BubblePage";
 import Footer from "./components/Footer";
@@ -8,6 +8,7 @@ import { useLoading } from "./library/useloading";
 import { fetchLogin } from "./library/apiMethods";
 import { LoadingComponent } from "./components/loadingComponent";
 import { ErrorComponent } from "./components/errorComponent";
+import { Sandbox } from "./Sandbox";
 
 export function App() {
   const { data, error, loading, reload } = useLoading(fetchLogin);
@@ -27,6 +28,7 @@ export function App() {
       <main>
         <Routes>
           <Route path={"/"} element={<BubblePage />} />
+          <Route path={"/sandbox"} element={<Sandbox />} />
           <Route
             path={"/login/*"}
             element={<LoginPage config={data?.config} reload={reload} />}
