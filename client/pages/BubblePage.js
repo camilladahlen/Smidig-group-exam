@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import BubbleChart from "../components/BubbleChart";
 import { Route, Routes } from "react-router-dom";
-import { useLoading } from "../ library/useloading";
-import { fetchJSON } from "../ library/http";
+import { useLoading } from "../library/useloading";
+import { fetchJSON } from "../library/http";
 
 export function BubblePage() {
   const [tags, setTags] = useState([]);

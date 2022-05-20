@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
-import { endSession, fetchLogin, registerLogin } from "../ library/apiMethods";
-import { randomString } from "../ library/randomString";
-import { sha256 } from "../ library/sha256";
+import { endSession, fetchLogin, registerLogin } from "../library/apiMethods";
+import { randomString } from "../library/randomString";
+import { sha256 } from "../library/sha256";
 import { ErrorComponent } from "../components/errorComponent";
-import { useLoading } from "../ library/useloading";
+import { useLoading } from "../library/useloading";
 import { LoadingComponent } from "../components/loadingComponent";
 
 /**

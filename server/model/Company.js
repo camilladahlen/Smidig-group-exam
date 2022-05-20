@@ -1,10 +1,18 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const companySchema = new mongoose.Schema({
   name: { type: String, required: true },
   orgNr: { type: Number, required: true },
   description: String,
-  categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
+  categories: [
+    {
+      category: {
+        type: Schema.Types.ObjectId,
+        ref: "Category",
+      },
+      weight: { type: Number, required: true },
+    },
+  ],
   type: {
     type: String,
     enum: ["non-profit", "customer"],
