@@ -1,5 +1,5 @@
 import { Company } from "../model/Company.js";
-import { CategoryService } from "./CategoryService";
+import { CategoryService } from "./CategoryService.js";
 
 const CompanyService = (function () {
   return {

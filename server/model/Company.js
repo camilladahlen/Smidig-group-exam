@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const companySchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -7,7 +7,7 @@ const companySchema = new mongoose.Schema({
   categories: [
     {
       category: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
       },
       weight: { type: Number, required: true },
