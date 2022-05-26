@@ -8,7 +8,8 @@ import { useLoading } from "./library/useloading";
 import { fetchLogin } from "./library/apiMethods";
 import { LoadingComponent } from "./components/loadingComponent";
 import { ErrorComponent } from "./components/errorComponent";
-import { Sandbox } from "./Sandbox";
+import { Tutorial } from "./pages/Tutorial";
+
 
 export function App() {
   const { data, error, loading, reload } = useLoading(fetchLogin);
@@ -22,22 +23,18 @@ export function App() {
 
   return (
     <BrowserRouter>
-      <header>
-        <Header />
-      </header>
       <main>
         <Routes>
-          <Route path={"/"} element={<BubblePage />} />
-          <Route path={"/sandbox"} element={<Sandbox />} />
+          <Route path={"/"} element={<Tutorial />} />
+          <Route path={"/personalise"} element={<BubblePage />} />
+
           <Route
             path={"/login/*"}
             element={<LoginPage config={data?.config} reload={reload} />}
           />
         </Routes>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </BrowserRouter>
   );
 }
