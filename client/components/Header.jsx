@@ -1,77 +1,27 @@
-import React from "react";
-import { MdHome } from "react-icons/md";
-import { MdContacts } from "react-icons/md";
-import { GoGlobe } from "react-icons/go";
-import { FaHandshake } from "react-icons/fa";
-import { MdPermIdentity } from "react-icons/md";
-import logo from "../resources/MelioraLogoEditBlack.png";
+import logo from "../resources/MelioraLogoEditWhite.png";
+import { HeaderButton } from "./headerButtonComponent";
 
-const Header = () => {
-  const list = document.querySelectorAll(".list");
-  function activateLink() {
-    list.forEach((item) => item.classList.remove("active"));
-    this.classList.add("active");
-  }
-  list.forEach((item) => item.addEventListener("click", activateLink));
-
+export function Header() {
   return (
-    <div className="container header-cont is-fluid">
-      <div className="columns is-vcentered">
-        <div className="column is-4 has-text-left">
-          <img style={{ height: "50px", width: "50px" }} src={logo} />
+    <header>
+      <nav
+        className={"navbar is-spaced is-transparent "}
+        role={"navigation"}
+        aria-label={"main navigation"}
+      >
+        <div className="navbar-brand">
+          <img src={logo} alt={"Meloria Impact logo"} />
         </div>
-        <div className="column">
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <div className={"navigation-container"}>
-              <ul>
-                <li className={"list active"}>
-                  <a href={"#"}>
-                    <span className={"icon"}>
-                      <MdHome />
-                    </span>
-                    <span className={"text"}>Home</span>
-                  </a>
-                </li>
-                <li className={"list"}>
-                  <a href={"#"}>
-                    <span className={"icon"}>
-                      <GoGlobe />
-                    </span>
-                    <span className={"text"}>Vision</span>
-                  </a>
-                </li>
-                <li className={"list"}>
-                  <a href={"#"}>
-                    <span className={"icon"}>
-                      <FaHandshake />
-                    </span>
-                    <span className={"text"}>Join us</span>
-                  </a>
-                </li>
-                <li className={"list"}>
-                  <a href={"#"}>
-                    <span className={"icon"}>
-                      <MdContacts />
-                    </span>
-                    <span className={"text"}>Contact</span>
-                  </a>
-                </li>
-                <li className={"list"}>
-                  <a href={"/login/google"}>
-                    <span className={"icon"}>
-                      <MdPermIdentity />
-                    </span>
-                    <span className={"text"}>Sign up</span>
-                  </a>
-                </li>
-                <div className={"indicator"} />
-              </ul>
-            </div>
-          </div>
+        <div className={"navbar-end"}>
+          <a className={"navbar-item px-5"}>Home</a>
+          <a className={"navbar-item px-5"}>Our vision</a>
+          <a className={"navbar-item px-5"}>Join us</a>
+          <a className={"navbar-item px-5"}>Contact</a>
+          <a className={"navbar-item px-5"}>
+            <HeaderButton value={"Sign up"} />
+          </a>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
-};
-
-export default Header;
+}

@@ -8,6 +8,7 @@ import { CategoryController } from "./routes/CategoryController.js";
 import { CompanyController } from "./routes/CompanyController.js";
 import mongoose from "mongoose";
 import { LoginController } from "./routes/LoginController.js";
+import { CreateMockData } from "./MockData.js";
 
 dotenv.config();
 mongoose.connect(
@@ -37,6 +38,8 @@ app.use((req, res, next) => {
     next();
   }
 });
+
+await CreateMockData();
 const server = app.listen(process.env.PORT || 3000, (error) => {
   if (!error) {
     console.log(`Started on http://localhost:${server.address().port}`);

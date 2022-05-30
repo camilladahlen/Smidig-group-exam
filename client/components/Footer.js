@@ -7,7 +7,7 @@ import Entur from "../images/entur.png";
 import Microsoft from "../images/microsoft.png";
 import "../css/Footer.css";
 
-const Footer = () => {
+export function Footer() {
   return (
     <footer className="footer" style={{ width: "100%", padding: "0%" }}>
       <div className="columns is-centered">
@@ -45,7 +45,7 @@ const Footer = () => {
                   borderTop: "2px solid lightGrey ",
                   marginBottom: "3%",
                 }}
-              ></div>
+              />
             </div>
           </div>
 
@@ -61,8 +61,8 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="column"></div>
-            <div className="column"></div>
+            <div className="column" />
+            <div className="column" />
             <div className="column has-text-left">
               <p className="has-text-weight-semibold">SITE LINKS</p>
               <div
@@ -109,6 +109,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

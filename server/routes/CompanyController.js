@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { CompanyService } from "../service/CompanyService.js";
 import bodyParser from "body-parser";
+import { MatchingService } from "../service/MatchingService.js";
 
 export function CompanyController() {
   const router = new Router();
@@ -48,6 +49,15 @@ export function CompanyController() {
     } else {
       res.sendStatus(200);
     }
+  });
+  router.post("/match", async (req, res) => {
+    const result = await MatchingService.findMatchForCustomer([
+      { name: "Water", weight: 1 },
+      { name: "Education", weight: 1 },
+      { name: "Female rights", weight: 1 },
+      { name: "Emergency response", weight: 1 },
+    ]);
+    res.json(result);
   });
 
   return router;

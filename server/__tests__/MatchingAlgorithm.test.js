@@ -9,19 +9,17 @@ describe("Matching service", () => {
     { name: "Education" },
     { name: "Emergency response" },
   ];
-  const testCustomer = {
-    name: "Test customer",
-    orgNr: 5678,
-    description: "A fictional customer",
-    type: "customer",
-  };
   const testNonProfit = {
     name: "Test non-profit",
     orgNr: 1234,
     description: "A fictional non-profit",
     type: "non-profit",
   };
-
+  const customerCategories = [
+    { name: "Refugees", weight: 2 },
+    { name: "Water", weight: 1 },
+    { name: "Education", weight: 1 },
+  ];
   beforeEach(async () => {
     for (const category of categories) {
       await CategoryService.insert(category);
@@ -32,30 +30,17 @@ describe("Matching service", () => {
       { name: "Water", weight: -1 },
     ]);
 
-    await CompanyService.insert(testCustomer);
-    await CompanyService.addCategoriesToCompany(testCustomer, [
-      { name: "Refugees", weight: 2 },
-      { name: "Water", weight: 1 },
-      { name: "Education", weight: 1 },
-    ]);
-
     const nonProfit = await CompanyService.findOne({
       orgNr: testNonProfit.orgNr,
     });
 
-    const customer = await CompanyService.findOne({
-      orgNr: testCustomer.orgNr,
-    });
-
-    if (nonProfit.categories.length !== 2 || customer.categories.length !== 3) {
+    if (nonProfit.categories.length !== 2) {
       throw new Error("Categories not correctly added!");
     }
   });
 
   it("should return list of matching non-profits", async () => {
-    const res = await MatchingService.findMatchForCustomer({
-      orgNr: testCustomer.orgNr,
-    });
+    const res = await MatchingService.findMatchForCustomer(customerCategories);
 
     expect(res).toEqual(
       expect.arrayContaining([
@@ -67,9 +52,7 @@ describe("Matching service", () => {
   });
 
   it("should return a percentage match for each non-profit", async () => {
-    const res = await MatchingService.findMatchForCustomer({
-      orgNr: testCustomer.orgNr,
-    });
+    const res = await MatchingService.findMatchForCustomer(customerCategories);
 
     expect(res).toEqual(
       expect.arrayContaining([
@@ -93,9 +76,7 @@ describe("Matching service", () => {
       { name: "Water", weight: -1 },
       { name: "Education", weight: -1 },
     ]);
-    const res = await MatchingService.findMatchForCustomer({
-      orgNr: testCustomer.orgNr,
-    });
+    const res = await MatchingService.findMatchForCustomer(customerCategories);
     expect(res).toHaveLength(1);
   });
 
@@ -113,7 +94,7 @@ describe("Matching service", () => {
       { name: "Refugees", weight: -1 },
     ]);
 
-    const res = await MatchingService.findMatchForCustomer(testCustomer);
+    const res = await MatchingService.findMatchForCustomer(customerCategories);
     expect(res).toHaveLength(2);
     expect(res[0]).toEqual(
       expect.objectContaining({

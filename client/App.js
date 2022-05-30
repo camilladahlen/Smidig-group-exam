@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import { Header } from "./components/Header";
 import { BubblePage } from "./pages/BubblePage";
-import Footer from "./components/Footer";
+import { Footer } from "./components/Footer";
 import { LoginPage } from "./pages/loginPage";
 import { useLoading } from "./library/useloading";
 import { fetchLogin } from "./library/apiMethods";
 import { LoadingComponent } from "./components/loadingComponent";
 import { ErrorComponent } from "./components/errorComponent";
+import { GalleryPage } from "./pages/GalleryPage";
 import { Tutorial } from "./pages/Tutorial";
 
 
@@ -23,8 +24,11 @@ export function App() {
 
   return (
     <BrowserRouter>
+      <Header />
       <main>
         <Routes>
+          <Route path={"/cardpage"} element={<GalleryPage />} />
+
           <Route path={"/"} element={<Tutorial />} />
           <Route path={"/personalise"} element={<BubblePage />} />
 

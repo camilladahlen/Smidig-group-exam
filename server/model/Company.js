@@ -19,8 +19,8 @@ const companySchema = new mongoose.Schema({
     required: true,
     lowercase: true,
   },
-  logo: { type: Buffer },
-  viewMoreInfo: { type: Object }
+  logo: { type: String },
+  viewMoreInfo: { type: Object },
 });
 
 export const Company = mongoose.model("Company", companySchema);
