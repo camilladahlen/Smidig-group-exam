@@ -21,11 +21,7 @@ export function BubblePage() {
     }));
   }, []);
   if (loading) {
-    return (
-      <div className={"section"} style={{ height: "100vh" }}>
-        <LoadingComponent message={"Loading categories, please wait..."} />
-      </div>
-    );
+    return <LoadingComponent message={"Loading categories, please wait..."} />;
   }
   if (error) {
     return <ErrorComponent error={error} />;
