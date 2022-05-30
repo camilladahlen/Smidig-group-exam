@@ -51,12 +51,9 @@ export function CompanyController() {
     }
   });
   router.post("/match", async (req, res) => {
-    const result = await MatchingService.findMatchForCustomer([
-      { name: "Water", weight: 1 },
-      { name: "Education", weight: 1 },
-      { name: "Female rights", weight: 1 },
-      { name: "Emergency response", weight: 1 },
-    ]);
+    const { categories } = req.body;
+    console.log(`received categories: ${JSON.stringify(categories)}`);
+    const result = await MatchingService.findMatchForCustomer(categories);
     res.json(result);
   });
 

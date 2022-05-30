@@ -5,14 +5,14 @@ import { fetchJSON } from "../library/http";
 import { ErrorComponent } from "../components/errorComponent";
 import { LoadingComponent } from "../components/loadingComponent";
 import { ArrowButton } from "../components/ArrowButtonComponent";
+import { useNavigate } from "react-router-dom";
 
 const toggleSelected = (data) => {
-  console.log("This should alter the array of selected categories");
-  console.log(`data: ${JSON.stringify(data)}`);
   data.weight === 2 ? (data.weight = 0) : data.weight++;
 };
 
 export function BubblePage() {
+  const navigate = useNavigate();
   const { loading, error, data } = useLoading(async () => {
     return (await fetchJSON("/api/category/all")).map(({ name, _id }) => ({
       name,
@@ -34,10 +34,11 @@ export function BubblePage() {
   const mapDataAndSubmit = () => {
     const categories = data
       .map((entry) => ({
-        category: entry.name,
+        name: entry.name,
         weight: entry.weight,
       }))
       .filter((e) => e.weight !== 0);
+    navigate("/matches", { state: { categories } });
   };
 
   return (

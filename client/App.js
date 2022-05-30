@@ -26,7 +26,7 @@ export function App() {
       <Header />
       <main>
         <Routes>
-          <Route path={"/cardpage"} element={<GalleryPage />} />
+          <Route path={"/matches"} element={<GalleryPage />} />
           <Route path={"/"} element={<Tutorial />} />
           <Route path={"/personalise"} element={<BubblePage />} />
           <Route
