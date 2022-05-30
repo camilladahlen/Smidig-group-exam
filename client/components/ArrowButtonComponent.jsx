@@ -10,7 +10,6 @@ export function ArrowButton({ value, onClick = () => {} }) {
       >
         {value}
       </button>
-
       <span className={"arrow-right"}>
         <i className="fa-solid fa-arrow-right" />
       </span>
