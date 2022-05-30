@@ -25,40 +25,28 @@ export function PaymentPlanPage() {
               <PaymentCard
                 title={"Startup"}
                 revenue={"less than xxx,- yearly revenue"}
+                perks={["Perk 1", "Perk 2", "Perk 3"]}
               />
             </div>
             <div className={"column is-one-third"}>
               <PaymentCard
                 title={"Small business"}
                 revenue={"less than xxx,- yearly revenue"}
-                perks={
-                  <ul>
-                    <li>
-                      <span className="icon is-small">
-                        <i className="fas fa-check"></i>
-                      </span>
-                      <span>Perk 1</span>
-                    </li>
-                    <li>
-                      <span className="icon is-small">
-                        <i className="fas fa-check"></i>
-                      </span>
-                      <span>Perk 2</span>
-                    </li>
-                    <li>
-                      <span className="icon is-small">
-                        <i className="fas fa-check"></i>
-                      </span>
-                      <span>Perk 3</span>
-                    </li>
-                  </ul>
-                }
+                perks={["Perk 1", "Perk 2", "Perk 3", "Perk 4"]}
               />
             </div>
             <div className={"column is-one-third"}>
               <PaymentCard
                 title={"Large business"}
                 revenue={"less than xxx,- yearly revenue"}
+                perks={[
+                  "Perk 1",
+                  "Perk 2",
+                  "Perk 3",
+                  "Perk 4",
+                  "Perk 5",
+                  "Perk 6",
+                ]}
               />
             </div>
           </div>
