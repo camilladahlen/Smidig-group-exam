@@ -11,7 +11,6 @@ import { ErrorComponent } from "./components/errorComponent";
 import { GalleryPage } from "./pages/GalleryPage";
 import { Tutorial } from "./pages/Tutorial";
 
-
 export function App() {
   const { data, error, loading, reload } = useLoading(fetchLogin);
 
@@ -28,10 +27,8 @@ export function App() {
       <main>
         <Routes>
           <Route path={"/cardpage"} element={<GalleryPage />} />
-
           <Route path={"/"} element={<Tutorial />} />
           <Route path={"/personalise"} element={<BubblePage />} />
-
           <Route
             path={"/login/*"}
             element={<LoginPage config={data?.config} reload={reload} />}
