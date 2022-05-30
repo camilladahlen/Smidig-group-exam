@@ -1,6 +1,8 @@
 import { ArrowButton } from "./ArrowButtonComponent";
+import { useNavigate } from "react-router-dom";
 
 export function PaymentCard({ title, revenue, perks }) {
+  const navigate = useNavigate();
   return (
     <div className={"card-content card is-flex is-flex-direction-column"}>
       <div className="media-content">
@@ -19,7 +21,12 @@ export function PaymentCard({ title, revenue, perks }) {
         </ul>
       </div>
       <div className={"is-flex is-justify-content-center is-narrow"}>
-        <ArrowButton value={"Choose plan"} />
+        <ArrowButton
+          value={"Choose plan"}
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </div>
     </div>
   );
