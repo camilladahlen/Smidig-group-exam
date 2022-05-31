@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 export function PaymentCard({ title, revenue, perks }) {
   const navigate = useNavigate();
   return (
-    <div className={"card-content card is-flex is-flex-direction-column"}>
+    <div
+      className={"card-content card payments is-flex is-flex-direction-column"}
+    >
       <div className="media-content">
         <p className="title is-4">{title}</p>
         <p className="subtitle is-6 mb-0 pb-2">{revenue}</p>

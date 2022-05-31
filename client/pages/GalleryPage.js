@@ -58,6 +58,7 @@ export function GalleryPage() {
                 companyCategories={entry.nonProfit.categories}
                 onClick={toggleColumns}
                 singleCol={singleCol}
+                photos={entry.nonProfit.viewMoreInfo.photos}
               />
             ))}
           </div>
