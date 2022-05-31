@@ -64,11 +64,16 @@ class D3Component {
   initialiseBubbles = () => {
     const g = this.svg.selectAll(null).data(this.data).enter().append("g");
 
-    g.append("circle").attr("class", "bubble").attr("fill", "url(#gradient)");
+    g.append("circle")
+        .attr("class", "bubble")
+        .attr("fill", "url(#gradient)")
+        .style("cursor", "pointer");
 
     g.append("text")
       .text((data) => data.name)
-      .style("text-anchor", "middle");
+      .style("text-anchor", "middle")
+      .style("font-size", 13)
+        .style("cursor", "pointer");
 
     g.on("mouseup", (e) => {
       this.onClick(e.target.__data__);
