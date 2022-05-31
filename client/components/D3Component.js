@@ -68,7 +68,8 @@ class D3Component {
 
     g.append("text")
       .text((data) => data.name)
-      .style("text-anchor", "middle");
+      .style("text-anchor", "middle")
+      .style("font-size", 13)
 
     g.on("mouseup", (e) => {
       this.onClick(e.target.__data__);
