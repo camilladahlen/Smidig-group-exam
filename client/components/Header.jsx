@@ -16,9 +16,9 @@ export function Header({ data }) {
         </div>
         {!isEmpty && (
           <div className={"navbar-start"}>
-            <span className={"navbar-item px-5"}>
+            <a className={"navbar-item px-5"}>
               Welcome {data.user.google.name}
-            </span>
+            </a>
           </div>
         )}
         <div className={"navbar-end"}>
