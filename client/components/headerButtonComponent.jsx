@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { endSession } from "../library/apiMethods";
 
 export function HeaderButton({ isEmpty }) {
   const navigate = useNavigate();
@@ -19,8 +18,8 @@ export function HeaderButton({ isEmpty }) {
 
   return (
     <button
-      onClick={async () => {
-        await endSession();
+      onClick={() => {
+        navigate("/login/endsession");
       }}
       className={"button is-black"}
     >
