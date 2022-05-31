@@ -10,6 +10,7 @@ import { LoadingComponent } from "./components/loadingComponent";
 import { ErrorComponent } from "./components/errorComponent";
 import { GalleryPage } from "./pages/GalleryPage";
 import { Tutorial } from "./pages/Tutorial";
+import { PaymentPlanPage } from "./pages/PaymentPlanPage";
 
 export function App() {
   const { data, error, loading, reload } = useLoading(fetchLogin);
@@ -26,9 +27,10 @@ export function App() {
       <Header />
       <main>
         <Routes>
-          <Route path={"/matches"} element={<GalleryPage />} />
+          <Route path={"/cardpage"} element={<GalleryPage />} />
           <Route path={"/"} element={<Tutorial />} />
           <Route path={"/personalise"} element={<BubblePage />} />
+          <Route path={"/payments"} element={<PaymentPlanPage />} />
           <Route
             path={"/login/*"}
             element={<LoginPage config={data?.config} reload={reload} />}
