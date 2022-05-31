@@ -1,3 +1,3 @@
 export function HeaderButton({ value }) {
-  return <p id={"headerButton"}>{value}</p>;
+  return <button className={"button is-black"}>{value}</button>;
 }
