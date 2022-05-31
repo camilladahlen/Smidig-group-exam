@@ -3,8 +3,6 @@ import { CategoryService } from "./CategoryService.js";
 
 const MatchingService = (function () {
   const calculatePercentage = (customerCategories, nonProfitCategories) => {
-    console.log(`customerCategories: ${JSON.stringify(customerCategories)}`);
-    console.log(`nonProfitCategories: ${JSON.stringify(nonProfitCategories)}`);
     const matchingCategories = nonProfitCategories.filter(
       (c) =>
         customerCategories.findIndex((x) => x.name === c.category.name) !== -1

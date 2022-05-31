@@ -1,15 +1,12 @@
 import { GalleryCard } from "../components/GalleryCardComponent";
 import { useLoading } from "../library/useloading";
-import { Header } from "../components/Header";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { postJSON } from "../library/http";
 
-export function GalleryPage({ selectedCategories }) {
-  selectedCategories = [
-    { name: "Water", weight: 1 },
-    { name: "Education", weight: 1 },
-    { name: "Female rights", weight: 1 },
-    { name: "Refugees", weight: 1 },
-  ];
+export function GalleryPage() {
+  const location = useLocation();
+  const selectedCategories = location.state.categories;
 
   const [singleCol, setSingleCol] = useState(false);
   const { error, loading, data } = useLoading(
@@ -21,7 +18,7 @@ export function GalleryPage({ selectedCategories }) {
             Accept: "application/json",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ a: 1, b: "Textual content" }),
+          body: JSON.stringify({ categories: selectedCategories }),
         })
       ).json(),
     []
