@@ -24,7 +24,7 @@ export function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header data={data} />
       <main>
         <Routes>
           <Route path={"/matches"} element={<GalleryPage />} />
