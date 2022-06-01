@@ -7,10 +7,7 @@ export function Tutorial() {
   const [animate, setAnimate] = useState(false);
   const navigate = useNavigate();
   return (
-    <div
-      style={{ height: "100vh" }}
-      className={"is-flex is-justify-content-center is-flex-direction-column"}
-    >
+    <section className={"section"}>
       <div className={"has-text-white has-text-centered pb-6"}>
         <h1>Welcome!</h1>
         <p>
@@ -28,11 +25,11 @@ export function Tutorial() {
           onClick={() => {
             if (!animate) setAnimate(true);
             setTimeout(() => {
-              navigate("/personalise");
+              navigate("/onboarding/personalise");
             }, 3000);
           }}
         />
       </div>
-    </div>
+    </section>
   );
 }

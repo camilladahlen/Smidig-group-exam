@@ -40,9 +40,10 @@ export function BubblePage() {
       .filter((e) => e.weight !== 0);
     navigate("/matches", { state: { categories } });
   };
+  const bg = require("../images/background.png");
 
   return (
-    <section className="section">
+    <section className="section pt-6">
       <div className={"block is-flex is-justify-content-center pt-6"}>
         <p className={"has-text-white"}>
           Click once on the causes you are interested in, twice on what you

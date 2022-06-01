@@ -2,6 +2,7 @@ import { GalleryCard } from "../components/GalleryCardComponent";
 import { useLoading } from "../library/useloading";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import "../css/GalleryPage.css";
 import { postJSON } from "../library/http";
 
 export function GalleryPage() {
@@ -31,8 +32,9 @@ export function GalleryPage() {
   const toggleColumns = () => {
     singleCol ? setSingleCol(false) : setSingleCol(true);
   };
+
   return (
-    <section className={"section"}>
+    <section className={"section mt-6"}>
       <h1
         className={
           "title is-family-secondary is-size-1 has-text-white has-text-centered pb-6"
