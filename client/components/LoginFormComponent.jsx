@@ -42,7 +42,16 @@ export function LoginForm() {
             <p>Reimagining philantropic giving</p>
           </div>
           <div className={"is-flex is-justify-content-center p-5 mb-2"}>
-            <GoogleBtn onClick={() => navigate("/login/google")} />
+            <GoogleBtn
+              onClick={() => {
+                document.cookie = `login_callback_url=${
+                  window.location.pathname.includes("/matches")
+                    ? "/onboarding"
+                    : "/accountDetail"
+                }; path=/`;
+                navigate("/login/google");
+              }}
+            />
           </div>
           <Divider message={"or"} />
           <div className={"is-size-3 mb-2 mt-1"}>
