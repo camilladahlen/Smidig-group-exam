@@ -5,7 +5,7 @@ export function AccountDetailPage() {
   window.scrollTo(0, 0);
   return (
     <div className={"columns is-centered"}>
-      <div className={"column is-7"}>
+      <div className={"column is-5"}>
         <AccountDetailForm />
       </div>
     </div>

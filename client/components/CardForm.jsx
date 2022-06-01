@@ -1,3 +1,3 @@
 export function CardForm({ contents }) {
-  return <div className={"card"}>{contents}</div>;
+  return <div className={"card p-6"}>{contents}</div>;
 }

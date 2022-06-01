@@ -80,12 +80,5 @@ export function LoginForm() {
     );
   }
 
-  return (
-    <div className={"columns is-flex is-centered"}>
-      <div className={"column is-8 is-narrow"}>
-        {" "}
-        <CardForm contents={formContents()} />
-      </div>
-    </div>
-  );
+  return <CardForm contents={formContents()} />;
 }
