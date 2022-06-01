@@ -115,7 +115,7 @@ export function GalleryCard({
   return (
     <div
       className={`card is-flex is-flex-direction-column ${
-        isExpanded ? "p-6" : "p-4"
+        isExpanded ? "p-6" : "p-4 hoverPop"
       }`}
     >
       {isExpanded && (
@@ -153,7 +153,11 @@ export function GalleryCard({
       <div className={"is-flex is-justify-content-center p-4"}>
         <ArrowButton
           value={isExpanded ? "Start registration" : "View more"}
-          onClick={() => (!isExpanded ? toggleExpanded() : navigate("../payments", { replace: true }))}
+          onClick={() =>
+            !isExpanded
+              ? toggleExpanded()
+              : navigate("../payments", { replace: true })
+          }
         />
       </div>
     </div>
