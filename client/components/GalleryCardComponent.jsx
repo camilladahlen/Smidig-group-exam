@@ -119,7 +119,7 @@ export function GalleryCard({
   return (
     <div
       className={`card is-flex is-flex-direction-column ${
-        isExpanded ? "p-6" : "p-4"
+        isExpanded ? "p-6" : "p-4 hoverPop"
       }`}
     >
       {isExpanded && (

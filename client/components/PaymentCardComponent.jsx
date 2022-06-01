@@ -9,7 +9,9 @@ export function PaymentCard({ title, revenue, perks }) {
   }
   return (
     <div
-      className={"card-content card payments is-flex is-flex-direction-column"}
+      className={
+        "hoverPop card-content card payments is-flex is-flex-direction-column"
+      }
     >
       <div className="media-content">
         <p className="title is-4">{title}</p>
