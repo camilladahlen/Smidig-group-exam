@@ -1,50 +1,17 @@
 import React from "react";
 import "../css/BarGraph.css";
-
-const BarGraph = ({ element }) => {
+export function BarGraph({ percentage }) {
   return (
-    <div className={"column is-half"}>
-      <div className={"Bar"}>{element}</div>
+    <div className={"bar-graph block is-flex has-text-white"}>
+      <div className={"bar-left is-flex-grow-1 has-text-left"}>
+        {100 - percentage + "%"}
+      </div>
+      <div
+        className={"bar-right has-text-right"}
+        style={{ width: `${percentage}%` }}
+      >
+        {percentage + "%"}
+      </div>
     </div>
   );
-};
-
-export default BarGraph;
-/*
-const testBar = (program, admin) => {
-  document.getElementById("program").textContent = program + "%";
-  document.getElementById("admin").textContent = admin + "%";
-
-  return (
-    <div className={"p-1 graph"}>
-      <table className={"bar"} id={"my-chart"}>
-        <tr>
-          <td
-            id={"program"}
-            style={{
-              width: program,
-            }}
-          >
-            temp1
-          </td>
-          <td
-            id={"admin"}
-            style={{
-              width: admin,
-            }}
-          >
-            temp2
-          </td>
-        </tr>
-      </table>
-    </div>
-  );
-};
-
-return (
-  <div className={"container"}>
-    <div className={"columns"}>
-      <BarGraph element={testBar(70, 30)} />
-    </div>
-  </div>
-);*/
+}

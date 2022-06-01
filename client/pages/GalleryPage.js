@@ -1,6 +1,7 @@
 import { GalleryCard } from "../components/GalleryCardComponent";
 import { useLoading } from "../library/useloading";
 import { useState } from "react";
+import { postJSON } from "../library/http";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../css/GalleryPage.css";
 

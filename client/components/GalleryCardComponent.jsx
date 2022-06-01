@@ -1,5 +1,6 @@
 import { ArrowButton } from "./ArrowButtonComponent";
 import { useState } from "react";
+import { BarGraph } from "./BarGraph";
 import { useNavigate } from "react-router-dom";
 
 export function GalleryCard({
@@ -11,11 +12,8 @@ export function GalleryCard({
   photos,
 }) {
   const [isExpanded, setExpanded] = useState(false);
-  const navigate = useNavigate();
 
-  async function handleSubmit() {
-    navigate("../payments", { replace: true });
-  }
+  const navigate = useNavigate();
 
   const matchingList = () => {
     return (
@@ -72,7 +70,7 @@ export function GalleryCard({
       <>
         {photos.map((url) => (
           <div className={"image has-text-centered p-3"}>
-            <img src={url} />
+            <img src={url} alt={"charity image"} />
           </div>
         ))}
       </>
@@ -93,12 +91,7 @@ export function GalleryCard({
             dangerouslySetInnerHTML={{ __html: result[1] }}
           />
           <div className={"column"}>
-            <div
-              className={"mb-4 p-2 has-text-centered"}
-              style={{ backgroundColor: "goldenrod", borderRadius: 50 }}
-            >
-              BAR GRAPH
-            </div>
+            <BarGraph percentage={company.viewMoreInfo.adminPercentage} />
             <div className={"grid-container"}>
               {company.viewMoreInfo.stats &&
                 company.viewMoreInfo.stats.map((stat) => (
@@ -160,7 +153,7 @@ export function GalleryCard({
       <div className={"is-flex is-justify-content-center p-4"}>
         <ArrowButton
           value={isExpanded ? "Start registration" : "View more"}
-          onClick={() => (!isExpanded ? toggleExpanded() : handleSubmit())}
+          onClick={() => (!isExpanded ? toggleExpanded() : navigate("../payments", { replace: true }))}
         />
       </div>
     </div>

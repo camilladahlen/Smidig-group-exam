@@ -72,6 +72,7 @@ export async function CreateMockData() {
           "Amnesty is funded by members and people like you. They are independent of any political ideology, economic interest or religion. No government is beyond scrutiny. No situation is beyond hope. <br>" +
           "<br>" +
           "&img&" +
+
           "Amnesty has among other things been working to ensure a safe education for girls around the world, without fear of being punished. " +
           "We investigate and expose the facts, whenever and wherever abuses happen.<br>" +
           "We lobby governments, and other powerful groups such as companies. Making sure they keep their promises and respect international law.<br> " +
