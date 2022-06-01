@@ -92,6 +92,10 @@ export function GalleryCard({
           />
           <div className={"column"}>
             <BarGraph percentage={company.viewMoreInfo.adminPercentage} />
+            <p className={"has-text-left mb-6"}>
+              Percentage of funds that went to initiatives vs. administrative
+              cost
+            </p>
             <div className={"grid-container"}>
               {company.viewMoreInfo.stats &&
                 company.viewMoreInfo.stats.map((stat) => (
@@ -153,7 +157,9 @@ export function GalleryCard({
       <div className={"is-flex is-justify-content-center p-4"}>
         <ArrowButton
           value={isExpanded ? "Start registration" : "View more"}
-          onClick={() => (!isExpanded ? toggleExpanded() : navigate("../payments", { replace: true }))}
+          onClick={() =>
+            !isExpanded ? toggleExpanded() : navigate("../payments")
+          }
         />
       </div>
     </div>
