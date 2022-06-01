@@ -3,11 +3,20 @@ import { useNavigate } from "react-router-dom";
 export function HeaderButton({ isEmpty }) {
   const navigate = useNavigate();
 
+  function saveLocationAndNavigate(url) {
+    document.cookie = `login_callback_url=${
+      window.location.pathname.includes("/matches")
+        ? "/onboarding"
+        : window.location.pathname
+    }; path=/`;
+    navigate(url);
+  }
+
   if (isEmpty) {
     return (
       <button
         onClick={() => {
-          navigate("/login/google");
+          saveLocationAndNavigate("/login/google");
         }}
         className={"button is-black"}
       >
@@ -19,7 +28,7 @@ export function HeaderButton({ isEmpty }) {
   return (
     <button
       onClick={() => {
-        navigate("/login/endsession");
+        saveLocationAndNavigate("/login/endsession");
       }}
       className={"button is-black"}
     >

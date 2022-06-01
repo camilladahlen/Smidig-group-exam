@@ -1,14 +1,12 @@
 import { GalleryCard } from "../components/GalleryCardComponent";
 import { useLoading } from "../library/useloading";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../css/GalleryPage.css";
-import { postJSON } from "../library/http";
 
 export function GalleryPage() {
   const location = useLocation();
   const selectedCategories = location.state.categories;
-
   const [singleCol, setSingleCol] = useState(false);
   const { error, loading, data } = useLoading(
     async () =>

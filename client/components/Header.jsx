@@ -28,9 +28,10 @@ export function Header({ data, headerColor }) {
         </div>
         {!isEmpty && (
           <div className={"navbar-start"}>
-            <a className={"navbar-item px-5"}>
-              Welcome {data.user.google.name}
-            </a>
+            <NavbarItem
+              textColor={headerColor}
+              label={`Welcome ${data.user.google.name}`}
+            />
           </div>
         )}
         <div

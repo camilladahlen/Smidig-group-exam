@@ -6,6 +6,7 @@ import { sha256 } from "../library/sha256";
 import { ErrorComponent } from "../components/errorComponent";
 import { useLoading } from "../library/useloading";
 import { LoadingComponent } from "../components/loadingComponent";
+import { getCookie } from "../library/getCookie";
 
 /**
  * The actual method that handles login. Redirects to the provider endpoint
@@ -48,14 +49,22 @@ async function handleLogin(provider, config) {
     authorization_endpoint + "?" + new URLSearchParams(params);
 }
 
+function navigateBack(navigate) {
+  const location = getCookie("login_callback_url");
+  document.cookie =
+    "login_callback_url=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  navigate(location === "" ? "/" : location);
+}
+
 /**
  * Function that displays a waiting message to the user, posts the access_token to the server
  * (whichs signs it), then returns to the front page
  */
 export function LoginCallback({ reload, config }) {
+  const navigate = useNavigate();
+
   const { provider } = useParams();
   const [error, setError] = useState("");
-  const navigate = useNavigate();
 
   useEffect(async () => {
     const { access_token, error, error_description, state, code } =
@@ -96,7 +105,7 @@ export function LoginCallback({ reload, config }) {
 
       //This updates the user info for the site if we logged in with a code flow
       reload();
-      navigate("/");
+      navigateBack(navigate);
       return;
     }
 
@@ -108,7 +117,7 @@ export function LoginCallback({ reload, config }) {
     await registerLogin(provider, { access_token });
     //This updates the user info for the site if we logged in with a token flow
     reload();
-    navigate("/");
+    navigateBack(navigate);
   }, []);
 
   if (error) {
@@ -130,7 +139,7 @@ export function Logout({ reload }) {
   useEffect(async () => {
     await endSession();
     reload();
-    navigate("/");
+    navigateBack(navigate);
   });
   return <h1>Please wait...</h1>;
 }
