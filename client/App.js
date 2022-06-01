@@ -8,6 +8,8 @@ import { fetchLogin } from "./library/apiMethods";
 import { LoadingComponent } from "./components/loadingComponent";
 import { ErrorComponent } from "./components/errorComponent";
 import { GalleryPage } from "./pages/GalleryPage";
+import { RegisterPage } from "./pages/RegisterPage";
+import {AccountDetailPage} from "./pages/AccountDetailPage";
 import { PageComponent } from "./components/pageComponent";
 import { OnboardingPage } from "./pages/OnboardingPage";
 import { PaymentPlanPage } from "./pages/PaymentPlanPage";
@@ -26,6 +28,8 @@ export function App() {
     <BrowserRouter>
       <main>
         <Routes>
+          <Route path={"/register"} element={<RegisterPage />} />
+          <Route path={"/accountDetail"} element={<AccountDetailPage />} />
           <Route path={"/payments"} element={<PaymentPlanPage />} />
           <Route
             path={"/matches"}

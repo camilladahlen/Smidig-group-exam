@@ -2,6 +2,8 @@ import { ArrowButton } from "../components/ArrowButtonComponent";
 import { LogoComponent } from "../components/LogoComponent";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GoogleBtn } from "../components/GoogleBtnComponent";
+import { LoginForm } from "../components/LoginFormComponent";
 
 export function Tutorial() {
   const [animate, setAnimate] = useState(false);
