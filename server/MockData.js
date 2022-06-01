@@ -45,7 +45,7 @@ export async function CreateMockData() {
         stats: [
           {
             icon: "fa-stethoscope",
-            number: "27,9",
+            number: "27.9",
             description:
               "million children received help through health programs in 2020",
           },
@@ -72,14 +72,28 @@ export async function CreateMockData() {
           "Amnesty is funded by members and people like you. They are independent of any political ideology, economic interest or religion. No government is beyond scrutiny. No situation is beyond hope. <br>" +
           "<br>" +
           "&img&" +
-          "Amnesty has among other things been working to ensure a safe education for girls around the world, without fear of being punished.",
+          "Amnesty has among other things been working to ensure a safe education for girls around the world, without fear of being punished. " +
+          "We investigate and expose the facts, whenever and wherever abuses happen.<br>" +
+          "We lobby governments, and other powerful groups such as companies. Making sure they keep their promises and respect international law.<br> " +
+          "<br>" +
+          "By telling the powerful stories of the people we work with, we mobilize millions of supporters around the world to campaign for change and to stand in defence of activists on the frontline. <br>" +
+          "We support people to claim their rights through education and training. <br>" +
+          "<br>" +
+          "For more information visit <a href='https://amnesty.no' target='_blank'>https://amnesty.no</a>",
         photos: [
           "https://amnesty.no/sites/default/files/styles/hero_la/public/2018-08/pride_kirkenes.jpg?itok=slouTxVg",
           "https://media.snl.no/media/150273/standard_compressed_NTB_PvSv04Uzx5c.jpg",
           "https://i.wpimg.pl/1200x/filerepo.grupawp.pl/api/v1/display/embed/58ed7d1b-56f4-44e0-a8c6-ed4aa3372c06",
         ],
         adminPercentage: 3.2,
-        stats: [],
+        stats: [
+          {
+            icon: "fa-solid fa-handcuffs",
+            number: "30.000",
+            description:
+              "norwegian people signed our campaign to release Evelyn Hernandez from 30 years in prison for having a stillborn baby. With your help we managed to release her and many people like her who have been wrongfully convicted.",
+          },
+        ],
       },
     },
     {
@@ -94,14 +108,30 @@ export async function CreateMockData() {
           "UNICEF works to create lasting change and strengthen the rights for all children. As the worlds largest aid organisation for children, and as an important part of the UN, we have a unique influence in over 190 countries. We fight to save the lives of children, protecting the most vulnerable and build a better future in the most pressured places in the world. <br>" +
           "<br>" +
           "&img&" +
-          "A child born from a mother with education has 50% higher chances of survival. Education boosts knowledge about hygiene, nutrition, vaccination and generall health, as well as securing an income for the children in their future. ",
+          "A child born from a mother with education has 50% higher chances of survival. Education boosts knowledge about hygiene, nutrition, vaccination and generall health, as well as securing an income for the children in their future. " +
+          "UNICEF provides safe spaces and educational materials to help displaced and refugee children who have been forced out of school get back to learning." +
+          "Before, during and after humanitarian emergencies, UNICEF is on the ground, bringing lifesaving help and hope to children and families. Non-political and impartial, we are never neutral when it comes to defending children’s rights and safeguarding their lives and futures. " +
+          "UNICEF provides more children with clean water, life-saving food and vaccines, education and protection from violence than any other humanitarian organisation.",
         photos: [
           "https://www.unicef.no/sites/default/files/2020-10/Publikasjoner_UN0298278_hero.jpg",
           "https://unicef.libpx.com/eu-west-1/images-production/uni146415_012e49f7694da9fd_b0a63959ac039105.jpg?format=jpg&quality=75&width=412&height=412&signature=fafef993d9d19b07dec00076b004657d65e335da",
           "https://www.unicef.no/sites/default/files/2020-10/un011310_hero.jpg",
         ],
         adminPercentage: 3.4,
-        stats: [],
+        stats: [
+          {
+            icon: "fa-graduation-cap",
+            number: "43",
+            description:
+              "million children received education materials through UNICEF’s education programs in 2020",
+          },
+          {
+            icon: "fa-solid fa-venus",
+            number: "3.2",
+            description:
+              "million girls were reached with skills, empowerment and employability training in 2020",
+          },
+        ],
       },
     },
     {
@@ -118,14 +148,32 @@ export async function CreateMockData() {
           "Founded in 1937, Plan International is a development and humanitarian organisation that advances children’s rights and equality for girls. We strive for a just world, working together with children, young people, our supporters and partners.<br>" +
           "<br>" +
           "&img&" +
-          "Plan is politically and religiously independent.",
+          "We see clear links between fulfilling children’s rights, achieving gender equality and ending child poverty. Every girl and boy has the right to be healthy, educated, protected, valued and respected in their own community and beyond. <br>" +
+          "<br>" +
+          "We support these rights from when children are born to when they reach adulthood. We work to ensure that girls and boys know their rights, and have the skills, knowledge and confidence to fulfil them. This approach inspires and empowers children and communities to create long-lasting change.<br>" +
+          "<br>" +
+          "Girls have the power to change the world. Our ambition is to work beside them, and together we take action so 100 million girls learn, lead, decide and thrive.<br>" +
+          "<br>" +
+          "For more information visit <a href='https://www.plan-international.org/' target='_blank'>https://www.plan-international.org/</a>",
         photos: [
           "https://plan.fi/wp-content/uploads/2021/06/Plan-international-banner.jpg",
           "https://plan-international.org/tachyon/2022/01/UGA-school.jpg?fit=1024%2C1024",
           "https://planinternational.imgix.net/uploaded/2019/01/201611-UGA-273.jpg?w=768&h=369&fit=crop&crop=faces&auto=compress,format",
         ],
         adminPercentage: 7,
-        stats: [],
+        stats: [
+          {
+            icon: "fa-solid fa-venus",
+            number: "5.7",
+            description:
+              "million girls were reached in protection against violence in 2020",
+          },
+          {
+            icon: "fa-graduation-cap",
+            number: "6.1",
+            description: "million girls got better access to education in 2020",
+          },
+        ],
       },
     },
   ];
