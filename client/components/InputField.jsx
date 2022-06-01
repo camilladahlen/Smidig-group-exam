@@ -12,7 +12,7 @@ export function InputFieldInput({
   const [color, setColor] = useState("");
   return (
     <div>
-      <label className={"label"}>{label}</label>
+      <label className={"is-size-6 p-2"}>{label}</label>
       <input
         className={`input ${color}`}
         type="text"
