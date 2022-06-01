@@ -18,6 +18,11 @@ export function Divider() {
 
 export function AccountDetailForm() {
   const navigate = useNavigate();
+
+  async function handleSubmit() {
+    navigate("../register", { replace: true });
+  }
+
   return (
     <div className={"columns is-flex is-centered"}>
       <div className={"column is-8 is-narrow"}>

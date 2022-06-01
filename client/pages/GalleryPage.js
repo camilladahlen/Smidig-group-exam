@@ -32,7 +32,7 @@ export function GalleryPage() {
   };
 
   return (
-    <section className={"section mt-6"}>
+    <section className={"section"}>
       <h1
         className={
           "title is-family-secondary is-size-1 has-text-white has-text-centered pb-6"

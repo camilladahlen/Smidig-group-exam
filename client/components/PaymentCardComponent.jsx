@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 export function PaymentCard({ title, revenue, perks }) {
   const navigate = useNavigate();
+
+  async function handleSubmit() {
+    navigate("../register", { replace: true });
+  }
   return (
     <div
       className={"card-content card payments is-flex is-flex-direction-column"}
@@ -26,7 +30,7 @@ export function PaymentCard({ title, revenue, perks }) {
         <ArrowButton
           value={"Choose plan"}
           onClick={() => {
-            navigate("/");
+            handleSubmit();
           }}
         />
       </div>

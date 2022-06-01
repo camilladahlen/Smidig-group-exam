@@ -9,7 +9,7 @@ import { LoadingComponent } from "./components/loadingComponent";
 import { ErrorComponent } from "./components/errorComponent";
 import { GalleryPage } from "./pages/GalleryPage";
 import { RegisterPage } from "./pages/RegisterPage";
-import {AccountDetailPage} from "./pages/AccountDetailPage";
+import { AccountDetailPage } from "./pages/AccountDetailPage";
 import { PageComponent } from "./components/pageComponent";
 import { OnboardingPage } from "./pages/OnboardingPage";
 import { PaymentPlanPage } from "./pages/PaymentPlanPage";
@@ -28,9 +28,22 @@ export function App() {
     <BrowserRouter>
       <main>
         <Routes>
-          <Route path={"/register"} element={<RegisterPage />} />
-          <Route path={"/accountDetail"} element={<AccountDetailPage />} />
-          <Route path={"/payments"} element={<PaymentPlanPage />} />
+          <Route
+            path={"/register"}
+            element={<PageComponent userData={data} page={<RegisterPage />} />}
+          />
+          <Route
+            path={"/accountDetail"}
+            element={
+              <PageComponent userData={data} page={<AccountDetailPage />} />
+            }
+          />
+          <Route
+            path={"/payments"}
+            element={
+              <PageComponent userData={data} page={<PaymentPlanPage />} />
+            }
+          />
           <Route
             path={"/matches"}
             element={<PageComponent userData={data} page={<GalleryPage />} />}

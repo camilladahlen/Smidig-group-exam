@@ -20,6 +20,10 @@ export function Divider({ message }) {
 
 export function LoginForm() {
   const navigate = useNavigate();
+  async function handleSubmit() {
+    navigate("../accountDetail", { replace: true });
+  }
+
   return (
     <div className={"columns is-flex is-centered"}>
       <div className={"column is-8 is-narrow"}>
@@ -49,10 +53,7 @@ export function LoginForm() {
               <InputFieldInput label={"Password"} placeholder={"Password"} />
             </div>
             <div className={"is-flex is-justify-content-center p-4"}>
-              <ArrowButton
-                value={"Continue"}
-                onClick={() => alert("Hello there")}
-              />
+              <ArrowButton value={"Continue"} onClick={() => handleSubmit()} />
             </div>
             <div className={"is-flex has-text-centered p-4"}>
               <p>

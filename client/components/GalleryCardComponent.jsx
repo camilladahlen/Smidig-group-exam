@@ -1,5 +1,6 @@
 import { ArrowButton } from "./ArrowButtonComponent";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function GalleryCard({
   percentage,
@@ -10,6 +11,11 @@ export function GalleryCard({
   photos,
 }) {
   const [isExpanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
+
+  async function handleSubmit() {
+    navigate("../payments", { replace: true });
+  }
 
   const matchingList = () => {
     return (
@@ -154,7 +160,7 @@ export function GalleryCard({
       <div className={"is-flex is-justify-content-center p-4"}>
         <ArrowButton
           value={isExpanded ? "Start registration" : "View more"}
-          onClick={() => !isExpanded && toggleExpanded()}
+          onClick={() => (!isExpanded ? toggleExpanded() : handleSubmit())}
         />
       </div>
     </div>

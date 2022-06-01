@@ -15,8 +15,8 @@ export function PageComponent({ page, backgroundColor, userData }) {
         data={userData}
         headerColor={backgroundColor ? "white" : "black"}
       />
-      <div className={"pt-6"} style={style}>
-        <div className={"pt-6"}>{page}</div>
+      <div className={"pt-6 pb-6"} style={style}>
+        <div className={"mt-6 pt-6"}>{page}</div>
       </div>
     </>
   );
