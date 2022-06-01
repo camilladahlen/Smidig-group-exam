@@ -13,7 +13,7 @@ import { OnboardingPage } from "./pages/OnboardingPage";
 import { PaymentPlanPage } from "./pages/PaymentPlanPage";
 
 export function App() {
-  const { data, error, loading, reload } = useLoading(fetchLogin, []);
+  const { data, error, loading, reload } = useLoading(fetchLogin);
 
   if (loading) {
     return <LoadingComponent message={"Fetching user data, please wait..."} />;
@@ -29,7 +29,7 @@ export function App() {
           <Route path={"/payments"} element={<PaymentPlanPage />} />
           <Route
             path={"/matches"}
-            element={<PageComponent page={<GalleryPage />} />}
+            element={<PageComponent userData={data} page={<GalleryPage />} />}
           />
           <Route
             path={"/login/*"}
@@ -39,6 +39,7 @@ export function App() {
             path={"/onboarding/*"}
             element={
               <PageComponent
+                userData={data}
                 backgroundColor={"#121212"}
                 page={<OnboardingPage />}
               />

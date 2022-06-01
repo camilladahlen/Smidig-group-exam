@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import bg from "../images/background.png";
 import { Header } from "./Header";
 
-export function PageComponent({ page, backgroundColor }) {
+export function PageComponent({ page, backgroundColor, userData }) {
   let style = {};
   if (backgroundColor) {
     style.backgroundColor = backgroundColor;
@@ -11,7 +11,10 @@ export function PageComponent({ page, backgroundColor }) {
   }
   return (
     <>
-      <Header headerColor={backgroundColor ? "white" : "black"} />
+      <Header
+        data={userData}
+        headerColor={backgroundColor ? "white" : "black"}
+      />
       <div className={"pt-6"} style={style}>
         <div className={"pt-6"}>{page}</div>
       </div>

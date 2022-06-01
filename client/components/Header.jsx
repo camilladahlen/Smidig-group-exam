@@ -14,7 +14,7 @@ export function Header({ data, headerColor }) {
       </a>
     );
   };
-  const isEmpty = Object.keys(data.user).length === 0;
+  const isEmpty = data.user && Object.keys(data.user).length === 0;
 
   return (
     <header className={"custom-header has-text-white"}>
@@ -24,7 +24,7 @@ export function Header({ data, headerColor }) {
         aria-label={"main navigation"}
       >
         <div className="navbar-brand">
-          <img src={logo} alt={"Meloria Impact logo"} />
+          <img src={logo} alt={"Meliora Impact logo"} />
         </div>
         {!isEmpty && (
           <div className={"navbar-start"}>
