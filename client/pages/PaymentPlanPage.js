@@ -2,6 +2,7 @@ import { PaymentCard } from "../components/PaymentCardComponent";
 import { SubscriptionOptionsButton } from "../components/SubscriptionButtonComponent";
 
 export function PaymentPlanPage() {
+  window.scrollTo(0, 0);
   const perks = [
     "Easily find non-profits reflecting your values",
     "Get updates regularly",
