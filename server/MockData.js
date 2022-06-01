@@ -111,7 +111,9 @@ export async function CreateMockData() {
           "A child born from a mother with education has 50% higher chances of survival. Education boosts knowledge about hygiene, nutrition, vaccination and generall health, as well as securing an income for the children in their future. " +
           "UNICEF provides safe spaces and educational materials to help displaced and refugee children who have been forced out of school get back to learning." +
           "Before, during and after humanitarian emergencies, UNICEF is on the ground, bringing lifesaving help and hope to children and families. Non-political and impartial, we are never neutral when it comes to defending children’s rights and safeguarding their lives and futures. " +
-          "UNICEF provides more children with clean water, life-saving food and vaccines, education and protection from violence than any other humanitarian organisation.",
+          "UNICEF provides more children with clean water, life-saving food and vaccines, education and protection from violence than any other humanitarian organisation." +
+          "<br>" +
+          "For more information visit <a href='https://unicef.org' target='_blank'>https://unicef.org</a>",
         photos: [
           "https://www.unicef.no/sites/default/files/2020-10/Publikasjoner_UN0298278_hero.jpg",
           "https://unicef.libpx.com/eu-west-1/images-production/uni146415_012e49f7694da9fd_b0a63959ac039105.jpg?format=jpg&quality=75&width=412&height=412&signature=fafef993d9d19b07dec00076b004657d65e335da",
