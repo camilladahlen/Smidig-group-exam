@@ -4,6 +4,7 @@ import { ArrowButton } from "./ArrowButtonComponent";
 import { CardForm } from "./CardForm";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 export const toastOptions = {
   position: "bottom-center",
@@ -25,7 +26,19 @@ export function Divider() {
   );
 }
 
-function formContents() {
+function FormContents() {
+  const [orgName, setOrgName] = useState("");
+  const [orgNum, setOrgNum] = useState("");
+  const [address, setAddress] = useState("");
+  const [country, setCountry] = useState("");
+  const [postcode, setPostcode] = useState("");
+  const [city, setCity] = useState("");
+
+  const handleSubmit = () => {
+    if (orgName && orgNum && address && country && postcode && city) {
+      toast.error("Demo completed, thank you!", toastOptions);
+    }
+  };
   return (
     <div>
       <div className={"is-flex is-justify-content-center"}>
@@ -46,27 +59,51 @@ function formContents() {
         </div>
         <Divider />
         <div className={"is-size-3"}>
-          <InputFieldInput label={"Organisation name"} placeholder={"Name"} />
+          <InputFieldInput
+            label={"Organisation name"}
+            placeholder={"Name"}
+            value={orgName}
+            setValue={setOrgName}
+          />
           <InputFieldInput
             label={"Organisation number"}
             placeholder={"Org. number"}
+            value={orgNum}
+            setValue={setOrgNum}
           />
-          <InputFieldInput label={"Address"} placeholder={"Address"} />
-          <InputFieldInput label={"Country"} placeholder={"Country"} />
+          <InputFieldInput
+            label={"Address"}
+            placeholder={"Address"}
+            value={address}
+            setValue={setAddress}
+          />
+          <InputFieldInput
+            label={"Country"}
+            placeholder={"Country"}
+            value={country}
+            setValue={setCountry}
+          />
           <div className="columns">
             <div className="column">
-              <InputFieldInput label={"Postcode"} placeholder={"Postcode"} />
+              <InputFieldInput
+                label={"Postcode"}
+                placeholder={"Postcode"}
+                value={postcode}
+                setValue={setPostcode}
+              />
             </div>
             <div className="column mb-4">
-              <InputFieldInput label={"City"} placeholder={"City"} />
+              <InputFieldInput
+                label={"City"}
+                placeholder={"City"}
+                value={city}
+                setValue={setCity}
+              />
             </div>
           </div>
         </div>
         <div className={"is-flex is-justify-content-center p-4"}>
-          <ArrowButton
-            value={"Register now"}
-            onClick={() => toast.error("Thank You", toastOptions)}
-          />
+          <ArrowButton value={"Register now"} onClick={() => handleSubmit()} />
         </div>
       </div>
       <ToastContainer />
@@ -75,5 +112,5 @@ function formContents() {
 }
 
 export function AccountDetailForm() {
-  return <CardForm contents={formContents()} />;
+  return <CardForm contents={<FormContents />} />;
 }
