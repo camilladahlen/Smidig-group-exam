@@ -1,7 +1,13 @@
 export function SubscriptionOptionsButton() {
   return (
     <div className={"subscription-options-container"}>
-      <input id={"monthly"} value={"HTML"} type={"radio"} name={"options"} />
+      <input
+        id={"monthly"}
+        value={"HTML"}
+        type={"radio"}
+        name={"options"}
+        defaultChecked={true}
+      />
       <label htmlFor={"monthly"}>Monthly</label>
       <input id={"quarterly"} value={"HTML"} type={"radio"} name={"options"} />
       <label htmlFor={"quarterly"}>Quarterly -5%</label>
