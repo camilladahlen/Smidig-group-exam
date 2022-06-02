@@ -2,6 +2,16 @@ import Logo from "../resources/MelioraLogo.png";
 import { InputFieldInput } from "./InputField";
 import { ArrowButton } from "./ArrowButtonComponent";
 import { CardForm } from "./CardForm";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export const toastOptions = {
+  position: "bottom-center",
+  autoClose: 6000,
+  pauseOnHover: true,
+  draggable: true,
+  theme: "dark",
+};
 
 export function Divider() {
   const border = {
@@ -55,10 +65,11 @@ function formContents() {
         <div className={"is-flex is-justify-content-center p-4"}>
           <ArrowButton
             value={"Register now"}
-            onClick={() => alert("Hello there")}
+            onClick={() => toast.error("Thank You", toastOptions)}
           />
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }
