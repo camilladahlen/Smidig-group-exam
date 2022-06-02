@@ -29,7 +29,7 @@ class D3Component {
     this.radiusScale = d3
       .scaleLinear()
       .domain([0, 2])
-      .range([minRadius, minRadius * 2]);
+      .range([minRadius, minRadius * 1.5]);
 
     this.configureGradient(this.svg);
     this.initialiseBubbles();
@@ -65,15 +65,15 @@ class D3Component {
     const g = this.svg.selectAll(null).data(this.data).enter().append("g");
 
     g.append("circle")
-        .attr("class", "bubble")
-        .attr("fill", "url(#gradient)")
-        .style("cursor", "pointer");
+      .attr("class", "bubble")
+      .attr("fill", "url(#gradient)")
+      .style("cursor", "pointer");
 
     g.append("text")
       .text((data) => data.name)
       .style("text-anchor", "middle")
       .style("font-size", 13)
-        .style("cursor", "pointer");
+      .style("cursor", "pointer");
 
     g.on("mouseup", (e) => {
       this.onClick(e.target.__data__);
@@ -109,6 +109,10 @@ class D3Component {
     this.svg
       .selectAll("circle")
       .attr("r", (data) => this.radiusScale(data.weight));
+    this.svg
+      .selectAll("text")
+      .style("font-size", (data) => 13 + data.weight * 1.7);
+
     this.runSimulation();
   };
 }

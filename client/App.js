@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { LoginPage } from "./pages/loginPage";
@@ -23,6 +23,13 @@ export function App() {
   if (error) {
     return <ErrorComponent error={error} />;
   }
+
+  const NavigateHack = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => navigate("/onboarding"), []);
+    return <></>;
+  };
 
   return (
     <BrowserRouter>
@@ -52,6 +59,7 @@ export function App() {
             path={"/login/*"}
             element={<LoginPage config={data?.config} reload={reload} />}
           />
+          <Route path={"/*"} element={<NavigateHack />} />
           <Route
             path={"/onboarding/*"}
             element={
