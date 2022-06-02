@@ -3,13 +3,13 @@ import React, { useState } from "react";
 export function InputFieldInput({
   label,
   value,
+  setValue,
   onValueChange,
   placeholder,
   disabled,
   type = "text",
 }) {
   const [errorMsg, setErrorMsg] = useState("");
-  const [input, setInput] = useState("");
   const [color, setColor] = useState("");
   return (
     <div>
@@ -21,7 +21,7 @@ export function InputFieldInput({
         placeholder={placeholder}
         disabled={disabled}
         onChange={(e) => {
-          setInput(e.target.value);
+          setValue(e.target.value);
           onValueChange(e.target.value, setErrorMsg, setColor);
         }}
       />

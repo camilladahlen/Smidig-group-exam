@@ -4,6 +4,7 @@ import Logo from "../resources/MelioraLogo.png";
 import { InputFieldInput } from "./InputField";
 import { ArrowButton } from "./ArrowButtonComponent";
 import { CardForm } from "./CardForm";
+import { useState } from "react";
 
 export function Divider({ message }) {
   const border = {
@@ -21,6 +22,12 @@ export function Divider({ message }) {
 
 export function LoginForm() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    email && password && navigate("../accountDetail");
+  };
 
   function formContents() {
     return (
@@ -58,19 +65,20 @@ export function LoginForm() {
             <InputFieldInput
               type={"email"}
               label={"E-mail"}
+              value={email}
+              setValue={setEmail}
               placeholder={"E-mail"}
             />
             <InputFieldInput
               type={"password"}
               label={"Password"}
+              value={password}
+              setValue={setPassword}
               placeholder={"Password"}
             />
           </div>
           <div className={"is-flex is-justify-content-center p-4"}>
-            <ArrowButton
-              value={"Continue"}
-              onClick={() => navigate("../accountDetail")}
-            />
+            <ArrowButton value={"Continue"} onClick={() => handleSubmit()} />
           </div>
           <div className={"is-flex has-text-centered p-4"}>
             <p>
