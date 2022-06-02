@@ -9,15 +9,22 @@
 
 #spinning-logo {
     animation: spinningLogo 18s infinite linear;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+
 }
 
 #logo-container {
+    z-index: 1;
     position: relative;
     top: 10px;
     height: fit-content;
     width: fit-content;
     /*filter:url('#goo');*/
     transform: translate(-15px, -12px);
+    pointer-events: none;
 }
 
 .bubble-wrap {

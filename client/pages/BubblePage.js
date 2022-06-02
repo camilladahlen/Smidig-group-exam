@@ -38,9 +38,12 @@ export function BubblePage() {
         weight: entry.weight,
       }))
       .filter((e) => e.weight !== 0);
+    if (categories.length === 0) {
+      alert("Please select at least one category");
+      return;
+    }
     navigate("/matches", { state: { categories } });
   };
-  const bg = require("../images/background.png");
 
   return (
     <section className="section pt-6">
@@ -52,7 +55,11 @@ export function BubblePage() {
       </div>
       <BubbleChart data={data} onClick={toggleSelected} />
       <div className={"is-flex is-justify-content-center"}>
-        <ArrowButton value={"Find match"} onClick={mapDataAndSubmit} />
+        <ArrowButton
+          value={"Find match"}
+          onClick={mapDataAndSubmit}
+          style={{ zIndex: 10 }}
+        />
       </div>
     </section>
   );
