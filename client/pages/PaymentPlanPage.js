@@ -32,21 +32,21 @@ export function PaymentPlanPage() {
           </div>
 
           <div className={"columns"}>
-            <div className={"column is-one-third"}>
+            <div className={"column is-flex"}>
               <PaymentCard
                 title={"Startup"}
                 revenue={"less than xxx,- yearly revenue"}
                 perks={[perks[0], perks[1], perks[2]]}
               />
             </div>
-            <div className={"column is-one-third"}>
+            <div className={"column is-flex"}>
               <PaymentCard
                 title={"Small business"}
                 revenue={"less than xxx,- yearly revenue"}
                 perks={[perks[0], perks[1], perks[2], perks[3], perks[4]]}
               />
             </div>
-            <div className={"column is-one-third"}>
+            <div className={"column is-flex"}>
               <PaymentCard
                 title={"Large business"}
                 revenue={"less than xxx,- yearly revenue"}
