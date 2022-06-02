@@ -32,7 +32,7 @@ export async function CreateMockData() {
           "Despite the progress that has been made throughout the last couple of decades, there is still a lot of work to be done to make sure all kids have acess to a good and safe education.  Our mission is to inspire breakthroughs in the way the world treats children, and to achieve immediate and lasting change in their lives. The situation facing the majority of the worlds’ children is a matter of serious concern. Save the Children Norway has the technical expertise and capacity to deliver results, even more so as we are joining forces with the global Save the Children." +
           "Our advocacy and campaign work addresses the rights of the poorest and most marginalized children and towards Governments to close the opportunity gaps and ensure equitable progress and outcomes for children.<br>" +
           "<br>" +
-          "Save the Children fights for children’s right to education, health and enough to eat, and to live in peace and with hope for the future." +
+          "Save the Children fights for children’s right to education, health and enough to eat, and to live in peace and with hope for the future. <br>" +
           "<br>" +
           "For more information visit <a href='https://www.reddbarna.no/' target='_blank'>https://www.reddbarna.no/</a>",
 
@@ -72,7 +72,6 @@ export async function CreateMockData() {
           "Amnesty is funded by members and people like you. They are independent of any political ideology, economic interest or religion. No government is beyond scrutiny. No situation is beyond hope. <br>" +
           "<br>" +
           "&img&" +
-
           "Amnesty has among other things been working to ensure a safe education for girls around the world, without fear of being punished. " +
           "We investigate and expose the facts, whenever and wherever abuses happen.<br>" +
           "We lobby governments, and other powerful groups such as companies. Making sure they keep their promises and respect international law.<br> " +
@@ -110,9 +109,10 @@ export async function CreateMockData() {
           "<br>" +
           "&img&" +
           "A child born from a mother with education has 50% higher chances of survival. Education boosts knowledge about hygiene, nutrition, vaccination and generall health, as well as securing an income for the children in their future. " +
-          "UNICEF provides safe spaces and educational materials to help displaced and refugee children who have been forced out of school get back to learning." +
+          "UNICEF provides safe spaces and educational materials to help displaced and refugee children who have been forced out of school get back to learning. <br>" +
+          "<br>" +
           "Before, during and after humanitarian emergencies, UNICEF is on the ground, bringing lifesaving help and hope to children and families. Non-political and impartial, we are never neutral when it comes to defending children’s rights and safeguarding their lives and futures. " +
-          "UNICEF provides more children with clean water, life-saving food and vaccines, education and protection from violence than any other humanitarian organisation." +
+          "UNICEF provides more children with clean water, life-saving food and vaccines, education and protection from violence than any other humanitarian organisation. <br>" +
           "<br>" +
           "For more information visit <a href='https://unicef.org' target='_blank'>https://unicef.org</a>",
         photos: [
