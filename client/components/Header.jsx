@@ -26,7 +26,11 @@ export function Header({ data, headerColor }) {
         role={"navigation"}
         aria-label={"main navigation"}
       >
-        <div className="navbar-brand" onClick={() => navigate("/")}>
+        <div
+          className="navbar-brand"
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer" }}
+        >
           <img src={logo} alt={"Meliora Impact logo"} />
         </div>
         {!isEmpty && (
