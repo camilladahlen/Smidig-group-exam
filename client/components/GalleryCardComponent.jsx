@@ -92,7 +92,7 @@ export function GalleryCard({
           />
           <div className={"column"}>
             <BarGraph percentage={company.viewMoreInfo.adminPercentage} />
-            <p className={"has-text-left mb-6"}>
+            <p className={"has-text-left is-italic mb-6"}>
               Percentage of funds that went to initiatives vs. administrative
               cost
             </p>

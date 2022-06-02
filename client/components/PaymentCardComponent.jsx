@@ -28,7 +28,7 @@ export function PaymentCard({ title, revenue, perks }) {
             ))}
         </ul>
       </div>
-      <div className={"is-flex is-justify-content-center is-narrow"}>
+      <div className={"is-flex is-justify-content-center is-narrow mt-4"}>
         <ArrowButton
           value={"Choose plan"}
           onClick={() => {
