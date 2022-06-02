@@ -4,6 +4,8 @@ import { useState } from "react";
 import { postJSON } from "../library/http";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../css/GalleryPage.css";
+import { LoadingComponent } from "../components/loadingComponent";
+import { ErrorComponent } from "../components/errorComponent";
 
 export function GalleryPage() {
   const location = useLocation();
@@ -23,9 +25,10 @@ export function GalleryPage() {
       ).json(),
     []
   );
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return <LoadingComponent message={"Finding matches, please wait..."} />;
   if (error) {
-    return <div>Error! {`${error}`}</div>;
+    return <ErrorComponent error={`Error! ${error}`} />;
   }
 
   const toggleColumns = () => {
