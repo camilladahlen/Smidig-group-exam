@@ -8,6 +8,8 @@ export function PageComponent({ page, backgroundColor, userData }) {
     style.backgroundColor = backgroundColor;
   } else {
     style.backgroundImage = "url(" + bg + ")";
+    style.objectFit = "fill";
+    style.backgroundRepeat = "no-repeat";
   }
   return (
     <>

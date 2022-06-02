@@ -1,8 +1,7 @@
 import { GalleryCard } from "../components/GalleryCardComponent";
 import { useLoading } from "../library/useloading";
 import { useState } from "react";
-import { postJSON } from "../library/http";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "../css/GalleryPage.css";
 import { LoadingComponent } from "../components/loadingComponent";
 import { ErrorComponent } from "../components/errorComponent";
@@ -48,7 +47,7 @@ export function GalleryPage() {
         <div className={"columns is-centered"}>
           <div
             className={`column ${
-              singleCol ? "grid-container single-col" : "grid-container"
+              singleCol ? "grid-container single-col is-9" : "grid-container"
             }`}
           >
             {data.map((entry) => (
