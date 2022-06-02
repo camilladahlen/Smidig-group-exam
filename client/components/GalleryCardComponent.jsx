@@ -145,7 +145,7 @@ export function GalleryCard({
           </>
         ) : (
           <div className={"has-text-danger"}>
-            {percentage.toFixed(2)}% MATCH
+            {percentage.toFixed(0)}% MATCH
           </div>
         )}
       </div>
