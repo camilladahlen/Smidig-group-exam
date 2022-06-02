@@ -6,6 +6,7 @@ export function InputFieldInput({
   onValueChange,
   placeholder,
   disabled,
+  type = "text",
 }) {
   const [errorMsg, setErrorMsg] = useState("");
   const [input, setInput] = useState("");
@@ -15,7 +16,7 @@ export function InputFieldInput({
       <label className={"is-size-6 p-2"}>{label}</label>
       <input
         className={`input ${color}`}
-        type="text"
+        type={type}
         value={value}
         placeholder={placeholder}
         disabled={disabled}

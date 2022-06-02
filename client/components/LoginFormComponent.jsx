@@ -55,8 +55,16 @@ export function LoginForm() {
           </div>
           <Divider message={"or"} />
           <div className={"is-size-3 mb-2 mt-1"}>
-            <InputFieldInput label={"E-mail"} placeholder={"E-mail"} />
-            <InputFieldInput label={"Password"} placeholder={"Password"} />
+            <InputFieldInput
+              type={"email"}
+              label={"E-mail"}
+              placeholder={"E-mail"}
+            />
+            <InputFieldInput
+              type={"password"}
+              label={"Password"}
+              placeholder={"Password"}
+            />
           </div>
           <div className={"is-flex is-justify-content-center p-4"}>
             <ArrowButton
