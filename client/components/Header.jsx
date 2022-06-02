@@ -1,11 +1,13 @@
 import logo from "../resources/MelioraLogoEditWhite.png";
 import { HeaderButton } from "./headerButtonComponent";
 import "../css/header.css";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Header({ data, headerColor }) {
-  const NavbarItem = ({ textColor, label }) => {
+  const NavbarItem = ({ textColor, label, onClick = () => {} }) => {
     return (
       <a
+        onClick={() => onClick()}
         className={`navbar-item px-5 ${
           textColor === "white" ? "has-text-white" : "has-text-black"
         }`}
@@ -14,6 +16,7 @@ export function Header({ data, headerColor }) {
       </a>
     );
   };
+  const navigate = useNavigate();
   const isEmpty = data.user && Object.keys(data.user).length === 0;
 
   return (
@@ -23,7 +26,7 @@ export function Header({ data, headerColor }) {
         role={"navigation"}
         aria-label={"main navigation"}
       >
-        <div className="navbar-brand">
+        <div className="navbar-brand" onClick={() => navigate("/")}>
           <img src={logo} alt={"Meliora Impact logo"} />
         </div>
         {!isEmpty && (
@@ -31,6 +34,7 @@ export function Header({ data, headerColor }) {
             <NavbarItem
               textColor={headerColor}
               label={`Welcome ${data.user.google.name}`}
+              to={""}
             />
           </div>
         )}
@@ -39,7 +43,11 @@ export function Header({ data, headerColor }) {
             headerColor === "white" ? "has-text-white" : "has-text-black"
           }`}
         >
-          <NavbarItem textColor={headerColor} label={"Home"} />
+          <NavbarItem
+            textColor={headerColor}
+            label={"Home"}
+            onClick={() => navigate("/")}
+          />
           <NavbarItem textColor={headerColor} label={"Our vision"} />
           <NavbarItem textColor={headerColor} label={"Join us"} />
           <NavbarItem textColor={headerColor} label={"Contact"} />
