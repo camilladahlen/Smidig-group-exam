@@ -144,7 +144,9 @@ export function GalleryCard({
             <div className={"divider columns is-centered m-5 "} />
           </>
         ) : (
-          <div className={"has-text-danger"}>{percentage}% MATCH</div>
+          <div className={"has-text-danger"}>
+            {percentage.toFixed(2)}% MATCH
+          </div>
         )}
       </div>
       <div className={"content has-text-left is-flex-grow-1 p-4"}>

@@ -15,11 +15,11 @@ body{
 
 .hoverPop {
     transform: scale(1);
-    transition: transform 300ms ease-out;
+    transition: transform 150ms ease-out;
 }
 .hoverPop:hover {
     transform: scale(1.03);
-    transition: transform 300ms ease-in;
+    transition: transform 150ms ease-in;
 
 }
 
