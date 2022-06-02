@@ -9,7 +9,7 @@ export function PageComponent({ page, backgroundColor, userData }) {
   } else {
     style.backgroundImage = "url(" + bg + ")";
     style.objectFit = "fill";
-    style.backgroundRepeat = "no-repeat";
+    style.backgroundRepeat = "repeat-y";
   }
   return (
     <>
