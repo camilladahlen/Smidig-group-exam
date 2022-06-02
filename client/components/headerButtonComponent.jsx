@@ -11,6 +11,12 @@ export function HeaderButton({ isEmpty }) {
     }; path=/`;
     navigate(url);
   }
+  const buttonStyle = {
+    backgroundColor: "#2a293e",
+    border: "none",
+    borderRadius: 10,
+    padding: "0 30px 0 30px",
+  };
 
   if (isEmpty) {
     return (
@@ -18,7 +24,8 @@ export function HeaderButton({ isEmpty }) {
         onClick={() => {
           saveLocationAndNavigate("/login/google");
         }}
-        className={"button is-black"}
+        className={"button has-text-white"}
+        style={buttonStyle}
       >
         Log in
       </button>
@@ -30,7 +37,8 @@ export function HeaderButton({ isEmpty }) {
       onClick={() => {
         saveLocationAndNavigate("/login/endsession");
       }}
-      className={"button is-black"}
+      className={"button has-text-white"}
+      style={buttonStyle}
     >
       Log out
     </button>
