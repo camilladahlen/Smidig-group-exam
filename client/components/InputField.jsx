@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 
+function checkEmptyField(val, setError, setColor) {
+  if (val.length === 0) {
+    setError("Field must not be blank");
+    setColor("danger");
+  } else {
+    setError("");
+  }
+}
+
 export function InputFieldInput({
   label,
   value,
   setValue,
-  onValueChange,
+  required = false,
+  onValueChange = () => {},
   placeholder,
   disabled,
   type = "text",
@@ -23,6 +33,9 @@ export function InputFieldInput({
         onChange={(e) => {
           setValue(e.target.value);
           onValueChange(e.target.value, setErrorMsg, setColor);
+          if (required) {
+            checkEmptyField(e.target.value, setErrorMsg, setColor);
+          }
         }}
       />
       {errorMsg && (

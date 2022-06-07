@@ -28,6 +28,7 @@ export function Divider() {
 
 function FormContents() {
   const [orgName, setOrgName] = useState("");
+  const [valOrgName, setValOrgName] = useState("");
   const [orgNum, setOrgNum] = useState("");
   const [address, setAddress] = useState("");
   const [country, setCountry] = useState("");
@@ -64,6 +65,7 @@ function FormContents() {
             placeholder={"Name"}
             value={orgName}
             setValue={setOrgName}
+            required={true}
           />
           <InputFieldInput
             label={"Organisation number"}
@@ -76,12 +78,14 @@ function FormContents() {
             placeholder={"Address"}
             value={address}
             setValue={setAddress}
+            required={true}
           />
           <InputFieldInput
             label={"Country"}
             placeholder={"Country"}
             value={country}
             setValue={setCountry}
+            required={true}
           />
           <div className="columns">
             <div className="column">
@@ -90,6 +94,7 @@ function FormContents() {
                 placeholder={"Postcode"}
                 value={postcode}
                 setValue={setPostcode}
+                required={true}
               />
             </div>
             <div className="column mb-4">
@@ -98,6 +103,7 @@ function FormContents() {
                 placeholder={"City"}
                 value={city}
                 setValue={setCity}
+                required={true}
               />
             </div>
           </div>
