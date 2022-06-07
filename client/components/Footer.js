@@ -1,10 +1,10 @@
 import React from "react";
 import Logo from "../images/logo1.png";
-import Google from "../images/google.png";
-import Dnb from "../images/dnb.png";
-import Dnv from "../images/dnv.png";
-import Entur from "../images/entur.png";
-import Microsoft from "../images/microsoft.png";
+import Google from "../images/generic-logo.png";
+import Dnb from "../images/generic-logo.png";
+import Dnv from "../images/generic-logo.png";
+import Entur from "../images/generic-logo.png";
+import Microsoft from "../images/generic-logo.png";
 import "../css/Footer.css";
 
 export function Footer() {
