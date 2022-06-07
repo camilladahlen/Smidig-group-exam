@@ -26,10 +26,12 @@ export function GalleryCard({
                   (np) => np.category.name === selCat.name
                 ) !== -1 && (
                   <li>
-                    <i
-                      className={"fa-solid fa-circle-check has-text-success"}
-                    />
-                    {selCat.name}
+                    <span className="icon-text">
+                      <span className="icon">
+                        <i className="fas fa-circle-check has-text-success" />
+                      </span>
+                      <span>{selCat.name}</span>
+                    </span>
                   </li>
                 )
               );
@@ -44,8 +46,12 @@ export function GalleryCard({
                   (np) => np.category.name === selCat.name
                 ) === -1 && (
                   <li>
-                    <i className={"fa-solid fa-circle-xmark has-text-danger"} />
-                    {selCat.name}
+                    <span className="icon-text">
+                      <span className="icon">
+                        <i className="fas fa-circle-xmark has-text-danger" />
+                      </span>
+                      <span>{selCat.name}</span>
+                    </span>
                   </li>
                 )
               );
