@@ -7,6 +7,7 @@ import { LoadingComponent } from "../components/loadingComponent";
 import { ErrorComponent } from "../components/errorComponent";
 
 export function GalleryPage() {
+  window.scrollTo(0, 0);
   const location = useLocation();
   const selectedCategories = location.state.categories;
   const [singleCol, setSingleCol] = useState(false);
