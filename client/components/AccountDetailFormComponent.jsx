@@ -28,7 +28,6 @@ export function Divider() {
 
 function FormContents() {
   const [orgName, setOrgName] = useState("");
-  const [valOrgName, setValOrgName] = useState("");
   const [orgNum, setOrgNum] = useState("");
   const [address, setAddress] = useState("");
   const [country, setCountry] = useState("");
@@ -38,6 +37,8 @@ function FormContents() {
   const handleSubmit = () => {
     if (orgName && orgNum && address && country && postcode && city) {
       toast.error("Demo completed, thank you!", toastOptions);
+    } else {
+      toast.error("You need to fill out all required fields!", toastOptions);
     }
   };
   return (
@@ -61,27 +62,27 @@ function FormContents() {
         <Divider />
         <div className={"is-size-3"}>
           <InputFieldInput
-            label={"Organisation name"}
+            label={"Organisation name*"}
             placeholder={"Name"}
             value={orgName}
             setValue={setOrgName}
             required={true}
           />
           <InputFieldInput
-            label={"Organisation number"}
+            label={"Organisation number*"}
             placeholder={"Org. number"}
             value={orgNum}
             setValue={setOrgNum}
           />
           <InputFieldInput
-            label={"Address"}
+            label={"Address*"}
             placeholder={"Address"}
             value={address}
             setValue={setAddress}
             required={true}
           />
           <InputFieldInput
-            label={"Country"}
+            label={"Country*"}
             placeholder={"Country"}
             value={country}
             setValue={setCountry}
@@ -90,7 +91,7 @@ function FormContents() {
           <div className="columns">
             <div className="column">
               <InputFieldInput
-                label={"Postcode"}
+                label={"Postcode*"}
                 placeholder={"Postcode"}
                 value={postcode}
                 setValue={setPostcode}
@@ -99,7 +100,7 @@ function FormContents() {
             </div>
             <div className="column mb-4">
               <InputFieldInput
-                label={"City"}
+                label={"City*"}
                 placeholder={"City"}
                 value={city}
                 setValue={setCity}
