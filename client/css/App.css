@@ -1,0 +1,39 @@
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+body{
+    padding: 0;
+    margin: 0;
+}
+.App {
+    text-align: center;
+    background-color: black;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.hoverPop {
+    transform: scale(1);
+    transition: transform 150ms ease-out;
+}
+.hoverPop:hover {
+    transform: scale(1.03);
+    transition: transform 150ms ease-in;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+:root {
+    --ButtonBorderRadius: 0.5em;
+}
+

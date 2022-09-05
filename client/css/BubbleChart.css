@@ -1,0 +1,14 @@
+#bubble-container{
+    width: 100%;
+    height: 75vh;
+    display: grid;
+    place-items: center;
+}
+
+.bubble-label{
+
+}
+
+.bubble{
+
+}

@@ -1,0 +1,15 @@
+.bar-left{
+    background-color: #4E4D70;
+    padding: 1em 0 1em 1em;
+}
+.bar-right{
+    background-color: #2A293C;
+    padding: 1em 1em 1em 0;
+    text-align: right;
+    min-width: 4em;
+}
+
+.bar-graph{
+    border-radius: 25px;
+    overflow: hidden;
+}

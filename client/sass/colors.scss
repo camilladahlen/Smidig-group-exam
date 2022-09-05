@@ -1,0 +1,30 @@
+//color variables
+$dark: #2A293C;
+$turquoise: #8CDDEA;
+$purple: #723A58;
+$success: #93F09C;
+$vipps: #FF5C24;
+$form: #7A7A7A;
+$overlay: #E0D0FB;
+
+
+//gradient variables
+$colors1: $turquoise, $purple;
+$colors2: $purple, $turquoise;
+
+@mixin gradient($direction, $colors){
+  background: -webkit-linear-gradient($direction, $colors);
+  background: -moz-linear-gradient($direction, $colors);
+  background: -o-linear-gradient($direction, $colors);
+  background: linear-gradient($direction, $colors);
+}
+
+/*
+use this while styling element with normal gradient{
+  @include gradient(left, colors1);
+}
+
+use this while styling element with reversed gradient{
+  @include gradient(left, colors2);
+}
+*/
